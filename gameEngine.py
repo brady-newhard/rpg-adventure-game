@@ -9,3 +9,4 @@ class GameEngine:
         print(f"\n Starting Quest: {quest.title.title()}")
         print(quest)
         battle(self.player, quest.monster)
+        
