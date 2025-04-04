@@ -5,8 +5,9 @@
 # Use instance attributes to track state (like health, gold, inventory).
 # Interact via method calls (player.attack(monster)).
 class Player_characters():
-    def __init__( self, name, health, attack):
+    def __init__( self, name, level, health, attack):
         self.name = name
+        self.level = level
         self.health = health
         self.attack = attack
 
@@ -19,6 +20,13 @@ class Player_characters():
             print(f"{target.name} has been defeated!")
             return True
         return False
+    
+    def level(self):
+        self.level += 1
+        self.health += 10
+        self.attack += 2
+        print(f"{self.name} leveled up to level {self.level}!")
+        
     def __str__(self):
         return f"Player: {self.name}, Health: {self.health}, Attack: {self.attack}"
     
