@@ -1,12 +1,15 @@
 def battle(player, monster):
     print(f"\nA battle begins between {player.name.title()} and {monster.name.title()}! Who will win?\n")
-    
+
     turn = 0
     while player.is_alive() and monster.is_alive():
+        input("Press Enter to continue...") 
+
         if turn % 2 == 0:
             player.attack(monster)
         else:
             monster.attack(player)
+
         turn += 1
         print("")
 
